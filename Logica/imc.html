@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+<script type="text/javascript">
+	function pulaLinha(n){
+		for (i = 0; i<n; i++){
+			document.write("<br>");
+		}
+	}
+
+	function mostra(texto, nLinhas){
+		document.write(texto);
+		pulaLinha(nLinhas);
+	}
+
+	function arredonda(valor, casas){
+		var divisor = Math.pow(10, casas);
+		return (Math.round(valor * divisor) / divisor);
+	}
+
+	function calculaImc(peso, altura, casas){
+		return (arredonda((peso / (altura * altura)), casas))
+	}
+	
+	var nome;
+	var peso = 0;
+	var altura = 0;
+	var imc = 0;
+
+  	do{
+  		nome = prompt("Qual o seu nome?")
+  		if (nome) {
+  			peso = prompt("Me diga seu peso")
+  			altura = prompt ("Me diga sua altura");
+  			imc = calculaImc(peso, altura, 2);
+  			mostra(nome + ", seu IMC  : " + imc, 4);
+  		}
+
+
+  	} while (nome)
+
+</script>

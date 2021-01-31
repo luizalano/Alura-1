@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<script type="text/javascript">
+	function pulaLinha(n){
+		for (i = 0; i<n; i++){
+			document.write("<br>");
+		}
+	}
+
+	function mostra(texto, nLinhas){
+		document.write(texto);
+		pulaLinha(nLinhas);
+	}
+
+	function arredonda(valor, casas){
+		var divisor = Math.pow(10, casas);
+		return (Math.round(valor * divisor) / divisor);
+	}
+
+	var ptVitoria = 3;
+	var ptEmpate = 1;
+	var pontos = 0;
+	var vitorias = 0
+	var empates = 0
+
+	vitorias = prompt("Número de vitórias");
+	empates = parseInt(prompt("Número de empates"));
+
+	pontos = vitorias * ptVitoria + empates * ptEmpate;
+
+	mostra ("Seu time está com " + pontos + " pontos!", 1)
+
+</script>

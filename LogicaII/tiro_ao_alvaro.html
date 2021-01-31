@@ -1,0 +1,74 @@
+<meta charset="utf-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script type="text/javascript">
+	var tela = document.querySelector('canvas');
+	var pincel = tela.getContext('2d');
+	var corFundo = '#f0f8ff';
+	var x0 = 300;
+	var y0 = 250;
+	var raio = 10;
+	var ultimoX = 0;
+	var ultimoY = 0;
+	var ultimoRaio = 0;
+
+
+	function desenhaRetangulo(x, y, altura, largura, cor, corBorda){
+		
+		pincel.fillStyle = cor;
+		pincel.fillRect(x,y, largura, altura);
+		if (corBorda){
+			pincel.fillStroke = corBorda;
+			pincel.strokeRect(x,y, largura, altura);
+		}
+
+	}
+
+	function bolinha(x, y, raio, cor){
+		pincel.fillStyle = cor;
+		pincel.beginPath();
+		pincel.arc(x, y, raio, 0, 2 * 3.1415);
+		pincel.fill();
+	}
+
+	function verificaAcerto(evento){
+
+		var x1 = evento.layerX;
+		var y1 = evento.layerY;
+
+		distancia = Math.pow(Math.abs(x1-x0)*Math.abs(x1-x0)+Math.abs(y1-y0)*Math.abs(y1-y0),0.5);
+
+		if (distancia <= raio){
+			alert('No alvo! disância calculada = ' + Math.round(distancia))
+		}
+
+
+		//bolinha(x, y, 10, paleta[iPaleta]);
+		bolinha(x, y, 10, cores.value);
+		//alert('Clicked na posição (' + x0 + ',' + y0 + ') ou layer (' + x + ',' + y + ')');
+		//console.log(evento);
+	}
+
+
+	function desenhaAlvo(){
+
+		bolinha(ultimoX, ultimoY, (raio * 3) + 1, corFundo);
+
+		x0 = Math.floor(Math.random() * tela.width)
+		y0 = Math.floor(Math.random() * tela.height)
+
+		bolinha(x0, y0, raio * 3, 'red');
+		bolinha(x0, y0, raio * 2, 'yellow');
+		bolinha(x0, y0, raio, 'black');
+
+		ultimoX = x0;
+		ultimoY = y0;
+	}
+
+	tela.onclick = verificaAcerto;
+	desenhaRetangulo(0,0, tela.height, tela.width, corFundo, null);
+	timer = setInterval(desenhaAlvo,1000);
+
+
+</script>

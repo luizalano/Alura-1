@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+
+<script type="text/javascript">
+	function pulaLinha(n){
+		for (i = 0; i<n; i++){
+			document.write("<br>")
+		}
+	}
+	
+	var today = new Date();
+	var dd = String(today.getDate()).padStart(2, '0');
+	var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+	var ano = today.getFullYear();
+	var idade1 = ano - 1966;
+	var idade2 = ano - 1992;
+	var idade3 = ano - 1996;
+
+	document.write("Hoje é dia " + dd + "/" + mm + "/" + ano + " -->" + today);
+	pulaLinha(2);
+	document.write("A idade do papaizinho é " + idade1 + "!" );
+	pulaLinha(1);
+	document.write("A idade do bundãozinho é " + idade2 + "!" );
+	pulaLinha(1);
+	document.write("A idade da goiabinha é " + idade3 + "!");
+	pulaLinha(2);
+
+	var media;
+	media = (idade1 + idade2 + idade3)/3;
+	media = (Math.round(media*100))/100
+	
+	document.write("A média das idades é " + (media) + "!")
+</script>

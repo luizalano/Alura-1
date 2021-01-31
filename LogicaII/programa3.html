@@ -1,0 +1,76 @@
+<meta charset="utf-8">
+
+<canvas width="600" height="400"></canvas>
+<br>
+Selecione a cor do desenha: <input type="color">
+
+<script type="text/javascript">
+	var tela = document.querySelector('canvas');
+	var pincel = tela.getContext('2d');
+
+	var paleta = ['#191970','#c71585','#b22222','#ff0000'];
+	var iPaleta = 0;
+	var desenha  = false;
+	var cores = document.querySelector("input");
+
+
+	function desenhaRetangulo(x, y, altura, largura, cor, corBorda){
+		
+		pincel.fillStyle = cor;
+		pincel.fillRect(x,y, largura, altura);
+		if (corBorda){
+			pincel.fillStroke = corBorda;
+			pincel.strokeRect(x,y, largura, altura);
+		}
+
+	}
+
+	function bolinha(x, y, raio, cor){
+		pincel.fillStyle = cor;
+		pincel.beginPath();
+		pincel.arc(x, y, raio, 0, 2 * 3.1415);
+		pincel.fill();
+	}
+
+	function desenhaBolinha(evento){
+
+		var x0 = evento.pageX - tela.offsetLeft;
+		var y0 = evento.pageY - tela.offsetTop;
+		var x = evento.layerX;
+		var y = evento.layerY;
+
+		//bolinha(x, y, 10, paleta[iPaleta]);
+		bolinha(x, y, 10, cores.value);
+		//alert('Clicked na posição (' + x0 + ',' + y0 + ') ou layer (' + x + ',' + y + ')');
+		//console.log(evento);
+	}
+
+	function bolinhaContinua(evento){
+
+		if (desenha) {
+			desenhaBolinha(evento);
+		}
+	}
+
+	function mudaPaleta(){
+		iPaleta++;
+		if (iPaleta == paleta.length) {
+			iPaleta = 0;
+		}
+		return false;  // Para não mostrar o menu de contexto.
+	}
+
+	tela.onclick = desenhaBolinha;
+	tela.oncontextmenu = mudaPaleta;
+	tela.onmousemove = bolinhaContinua;
+	tela.onmousedown = function (){
+		desenha = true;
+	}
+	tela.onmouseup = function (){
+		desenha = false;
+	}
+
+	desenhaRetangulo(0,0, tela.height, tela.width, '#f0f8ff', 'black');
+
+
+</script>

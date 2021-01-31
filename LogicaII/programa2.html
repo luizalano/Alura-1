@@ -1,0 +1,24 @@
+<meta charset="utf-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script type="text/javascript">
+	var tela = document.querySelector('canvas');
+	var pincel = tela.getContext('2d');
+
+	function desenhaRetangulo(x, y, altura, largura, cor, corBorda){
+		
+		pincel.fillStyle = cor;
+		pincel.fillRect(x,y, largura, altura);
+		pincel.fillStroke = corBorda;
+		pincel.strokeRect(x,y, largura, altura);
+
+	}
+
+	pincel.fillStyle = 'green';
+	desenhaRetangulo(0,0, 50, 50, 'green', 'black');
+	desenhaRetangulo(50,0, 50, 50, 'red', 'black');
+	desenhaRetangulo(100,0, 50, 50, 'green', 'black');
+
+
+</script>

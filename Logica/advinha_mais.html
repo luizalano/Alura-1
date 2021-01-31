@@ -1,0 +1,60 @@
+<meta charset="utf-8">
+
+<input type="number" id="nIn" name="numeroIn">
+
+<button>Confere aí</button>
+
+<script type="text/javascript">
+	var numerosSecretos = []
+
+	function randomiza(){
+		return (Math.round(Math.random() * 10));
+	}
+
+	var quantidade = 0
+	while (quantidade < 5){
+		var numerinho = randomiza();
+		var achou = false;
+
+		for (var j = 0; j <numerosSecretos.length; j++){
+			if (numerosSecretos[j] == numerinho){
+				achou= true;
+				break;
+			}
+		}
+
+		if (!achou){
+			numerosSecretos.push(randomiza());
+			quantidade++;
+		}
+	}
+
+	var numeroEscolhido = document.querySelector("input");
+
+	numeroEscolhido.focus();
+
+	function valida(){
+		var achou = false;
+
+		for (i = 0; i < numerosSecretos.length; i++){
+			if (numeroEscolhido.value == numerosSecretos[i]) {
+				achou = true;
+				alert("Bingo! Você acertou. " + numeroEscolhido.value);
+			}
+		}
+
+		if (!achou) {
+			alert("Nananinanão! Você errou. " + numeroEscolhido.value);
+		}
+
+		numeroEscolhido.value = "";
+		numeroEscolhido.focus();
+	}
+
+
+	var botao = document.querySelector("button");
+
+	botao.onclick = valida;
+
+
+</script>

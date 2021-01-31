@@ -1,0 +1,69 @@
+<meta charset="utf-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script type="text/javascript">
+	var tela = document.querySelector('canvas');
+	var pincel = tela.getContext('2d');
+	var corFundo = '#f0f8ff';
+	var ultimoX = 0;
+	var ultimoY = 0;
+	var ultimoRaio = 0;
+	var iteracoes = 0;
+	var maxIteracoes = 100;
+
+	function desenhaRetangulo(x, y, altura, largura, cor, corBorda){
+		
+		pincel.fillStyle = cor;
+		pincel.fillRect(x,y, largura, altura);
+		if (corBorda){
+			pincel.fillStroke = corBorda;
+			pincel.strokeRect(x,y, largura, altura);
+		}
+
+	}
+
+	function bolinha(x, y, raio, cor){
+		pincel.fillStyle = corFundo;
+		pincel.beginPath();
+		pincel.arc(ultimoX, ultimoY, ultimoRaio + 1, 0, 2 * Math.PI);
+		pincel.fill();
+
+		pincel.fillStyle = cor;
+		pincel.beginPath();
+		pincel.arc(x, y, raio, 0, 2 * Math.PI);
+		pincel.fill();
+		ultimoX = x;
+		ultimoY = y;
+		ultimoRaio = raio;
+	}
+
+	function geraCoordenadas(){
+
+		var x = 0
+		var y = 0
+
+		do {
+			x = Math.round(Math.random() * 1000);
+		} while (x > tela.width);
+
+		do {
+			y = Math.round(Math.random() * 1000);
+		} while (y > tela.height);
+
+
+		bolinha(x,y,10, 'red');
+
+		iteracoes++;
+
+		if (iteracoes >= maxIteracoes){
+			window.clearInterval(timer);
+		}
+
+	}
+
+	desenhaRetangulo(0,0, tela.height, tela.width, corFundo, null);
+	bolinha(20,20,10, 'red');
+	timer = setInterval(geraCoordenadas,20);
+
+</script>
