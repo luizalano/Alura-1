@@ -1,42 +1,133 @@
-body {
-	background: #fffff0	
+header{
+	background: #f8f8ff;
+	padding: 20px 0;
 }
-.titulo-principal{
-	padding-left: 20px;
+.caixa{
+	position: relative;
+	width: 940px;
+	margin: 0 auto; /* para cima e para baixo 0 e direita e esquerda automático*/
 }
-.titulo-centralizado {
-	text-align: center;
+nav{
+	position: absolute;
+	top: 110px;
+	right: 0; 
 }
-#banner{
-	width: 100%
+nav li{
+	display: inline;
+	margin: 0 0 0 15px;
 }
-.principal{
-	background: #fffff0;
-	padding: 30px;
+nav a{
+	text-transform: uppercase;
+	color: #000000;
+	font-weight: bold;
+	font-size: 22px;
+	text-decoration: none;
 }
-p {
-	text-align: center;
-	color: black
+
+nav a:hover{
+	/*
+		redefine o comportamento de quando o mouse estiver em cima
+		dos itens cobertos pelos itens de âncora que estejam dentro do 
+		item de navegação
+	*/
+	color: #d2691e;
+	text-decoration: underline;
 }
-#missao{
-	font-size: 20px; text-align: center
+
+.produtos{
+	width: 940px;
+	margin: 0 auto;
+	padding: 50px 0;
 }
-em strong {
-	color: #8b0000
-}
-.itens{
-	font-style: italic;
-}
-ul{
+
+.produtos li{
 	display: inline-block;
+	text-align: center;
+	width: 30%;
 	vertical-align: top;
-	width: 20%;
-	margin-right: 15%;
+	margin: 0 1.5%;
+	padding: 30px 20px;
+	box-sizing: border-box;  
+	/* 
+	   	Assim as margens ficam dentro dos 30% definidos no width.
+		Caso contrário somando todas as margens e tamanhos absolutos, poderia
+		estourar o tamanho definido dos 940 pixels
+	*/
+	border-color: #000000;
+	border-width: 2px;
+	border-style: solid;
+	border-radius: 10px;
 }
-.beneficios{
-	background: #FFFFFF;
-	padding: 20px;
+
+.produtos li:hover{
+	border-color: #d2691e;
 }
-.imagembeneficios{
-	width: 50%
+
+.produtos li:active{
+	/*
+		Redefine o comportamento quando o mouse está sendo clicado
+	*/
+	border-color: #00ff00;
+}
+
+.produtos li:hover h2{
+	/*
+		Quando o mouse estive sobre un item do li de produtos, deve
+		alterar a formatação do h2 que está dentro dele
+	*/
+	font-size: 34px;
+}
+
+.produtos h2{
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.produto-descricao{
+	font-size: 18px;
+}
+.produto-preco{
+	font-size: 22px;
+	font-weight: bold;
+	vertical-align: bottom;
+	margin-top: 10px;
+}
+
+main {
+	width: 940px;
+	margin: 0 auto;	
+}
+
+form {
+	margin: 40px 0;
+}
+
+form label, form p {
+	display: block;
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+
+.input-padrao {
+	display: block;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	padding: 10px 10px;
+	width: 50%;
+}
+
+.checkbox {
+	margin: 20px;
+}
+
+footer {
+	text-align: center;
+	background-image: url("bg.jpg");
+	padding: 40px 0;
+}
+
+.copyright{
+	color: #FFFFFF;
+	font-size: 13px;
+	margin-top: 20px;
 }

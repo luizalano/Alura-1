@@ -6,7 +6,7 @@ function buscaPacientes(){
 
 	if ((i % 2) == 0) xhr.open("GET", "http://api-pacientes.herokuapp.com/pacientess");
 	else xhr.open("GET", "http://api-pacientes.herokuapp.com/pacientes");
-	
+
 	xhr.addEventListener("load", function(){
 
 		var mensErro = document.querySelector("#mensagem-erro");
@@ -20,8 +20,6 @@ function buscaPacientes(){
 			})
 			mensErro.classList.add("invisivel");
 		} else {
-			alert(xhr.status);
-			alert(xhr.responseText);
 			mensErro.classList.remove("invisivel");
 		}
 
