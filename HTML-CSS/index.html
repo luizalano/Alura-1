@@ -2,6 +2,8 @@
 <html lang="pt-br">
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<!--  serve para que a largura da tela seadapte à largura do device -->
 		<title>Barbearia Alura</title>
 		<link rel="stylesheet" type="text/css" href="reset.css">
 		<link rel="stylesheet" type="text/css" href="style.css">
@@ -39,21 +41,31 @@
 			<section class="mapa">
 				<h3 class="titulo-principal">Nosso estabelecimento</h3>
 				<p>Estamos localizados no coração da cidade</p>
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.287197508369!2d-49.285531685491804!3d-25.428660139065993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce43b43436c05%3A0x971cf75afcb19a27!2sLuigi%20Pietro!5e0!3m2!1spt-BR!2sbr!4v1612156584440!5m2!1spt-BR!2sbr" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+				<div class="mapa-conteudo">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.287197508369!2d-49.285531685491804!3d-25.428660139065993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94dce43b43436c05%3A0x971cf75afcb19a27!2sLuigi%20Pietro!5e0!3m2!1spt-BR!2sbr!4v1612156584440!5m2!1spt-BR!2sbr" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+				</div>
 			</section>
 
 			<setcion class="beneficios">
 				<h3 class="titulo-principal">Benefícios</h3>
-				<ul>
-					<li class="itens">Atendimento aos clientes</li>
-					<li class="itens">Espaço diferenciado</li>
-					<li class="itens">Localização</li>
-					<li class="itens">Profissionais qualificados</li>
-				</ul>
-				<img src="beneficios.jpg" class="imagembeneficios">
 
+				<div class="conteudo-beneficios">
+					<ul  class="lista-beneficios">
+						<li class="itens">Atendimento aos clientes</li>
+						<li class="itens">Espaço diferenciado</li>
+						<li class="itens">Localização</li>
+						<li class="itens">Profissionais qualificados</li>
+						<li class="itens">Pontualidade</li>
+						<li class="itens">Limpeza</li>
+					</ul><img src="beneficios.jpg" class="imagem-beneficios">
+					<!--  Como eu quero que a lista e a tabela, que somados dão 100% do espaço (40% + 60%)
+					      é necessário "colar" os elementos para que não exista nenhum espaço entre 
+					      eles, ou seja a UL e a IMG  
+
+					      video, abaixo, estava com  height="315" -->
+				</div>
 				<div class="video">
-					<iframe width="560" height="315" src="https://www.youtube.com/embed/wcVVXUV0YUY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+					<iframe width="100%" height="315" src="https://www.youtube.com/embed/wcVVXUV0YUY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				</div>
 
 

@@ -1,0 +1,54 @@
+#h1menor{
+	font-size: 40px;
+}
+
+#h3menor{
+	font-size: 20px;
+}
+
+.frase{
+	font-size: 20px;
+}
+
+.campo-digitacao{
+	font-size: 20px;	
+	height: 150px;
+	text-align: left;
+	border: 5px solid black;
+	border-radius: 15px;
+	padding: 10px;
+}
+
+.campo-desativado{
+	background-color: #ffccd3;
+}
+
+.borda-verde{
+    border: 5px solid green;
+    border-radius: 15px;
+}
+
+.borda-vermelha{
+    border: 5px solid red;
+    border-radius: 15px;
+}
+
+.icones{
+	vertical-align: middle;
+}
+
+.tamanho-frase{
+	padding-left: 50px;
+}
+
+.botoes{
+	padding: 10px;
+}
+
+.placar{
+	display: none;
+}
+
+body{
+	overflow: scroll;
+}
