@@ -12,6 +12,11 @@ $(function(){
 	atribuiEventoFocoAoTexto();
 	inicializaCronometro();
 	atribuiFuncaoReset();
+	obtemPlacarArmazenado();
+	$('#usuarios').selectize({
+    	create: true,
+    	sortField: 'text'
+	});
 })
 
 function pegaTamanhoInicial (){
@@ -54,12 +59,13 @@ function atribuiEventoFocoAoTexto(){
 }
 
 function inicializaCronometro(){	
-	var tempoRestante = $("#tempo-restante").text();
+	
 	/* 	a Função on, ee entrar no campo várias vezes, chama a função várias vezes  
 	   	Para corrigir, usar a função one, ue só chama a função uma vez
 	*/
 	var campo = $(".campo-digitacao");
 	campo.one("focus", function(){
+		var tempoRestante = $("#tempo-restante").text();
 		var cronometroId = setInterval(function(){
 			tempoRestante--;
 			$("#tempo-restante").text(tempoRestante);

@@ -1,4 +1,5 @@
 $("#botao-placar").click(mostraPlacar);
+$("#botao-sync").click(sincronizaPlacar);
 
 function mostraPlacar(){
 	/* .stop para a animação anterior para executar a nova 
@@ -78,3 +79,52 @@ function novaLinha(nomeUsuario, numeroPalavras, resultado){
 	return linha;
 }
 
+function getPlacarTela(){
+	var placar = [];
+	// Recupera todas as tr filhas diretas de tbody
+	var linhas = $("tbody>tr");
+	linhas.each(function(){
+		var usuario = $(this).find("td:nth-child(1)").text();
+		var pontos = $(this).find("td:nth-child(2)").text();
+		var resultado = $(this).find("td:nth-child(3)").text();
+
+		var score ={
+			usuario: usuario,
+			pontos: pontos,
+			resultado: resultado
+		}
+		
+		placar.push(score);
+	})
+	/* 
+		placar contém um array com a estrutura montada
+		a função retorna un json com o array placar
+	*/
+	return { placar : placar};
+}
+
+function sincronizaPlacar(){
+	var placar = getPlacarTela();
+
+	$.post("http://localhost:3000/placar", placar, function(){
+		alert("Dados salvos!");
+	})
+
+}
+
+function obtemPlacarArmazenado(){
+	$.get("http://localhost:3000/placar", function(data){
+		
+		$(data).each(function(){
+			
+			var linha = novaLinha(this.usuario, this.pontos, this.resultado);
+			
+			linha.find(".botao-remover").click(atribuiEventoBotaoRemover);
+			$("tbody").append(linha);
+
+		})
+
+		$(".placar").slideDown(500);
+		rolaPaginaParaPlacar();
+	})
+}

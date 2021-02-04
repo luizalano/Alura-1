@@ -6,6 +6,7 @@
     <link rel="stylesheet" type="text/css" href="css/libs/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/selectize.default.css">
 </head>
 	<body>
 		<div class="container"> 
@@ -16,6 +17,11 @@
 
 		    <p class="frase center">Luiz Alberto Alano</p>
 
+		    <div class="center">
+		    	<img src="img/spinner.gif" alt="Spiiner de caregamento de novo texto" id="spinner">
+		    	<p id="erro">Erro ao buscar dados do servidor. Tente novamente ou chame o call center!</p>
+		    </div>
+
 		    <ul class="informacoes center">
 		    	<li><i class="small material-icons icones">description</i><span id="tamanho-frase">x</span> palavras</li>
 		    	<li><i class="small material-icons icones">query_builder</i><span id="tempo-restante">6</span> segundos</li>
@@ -23,9 +29,21 @@
 
 		    <textarea class="campo-digitacao" rows="10" cols="80"></textarea>
 		    <div class="botoes">
-		    	 <a class="btn-floating btn-large waves-effect waves-light red"><i id="botao-reiniciar" class="material-icons">restore</i></a>
-		    	 <a class="btn-floating btn-large waves-effect waves-light green"><i id="botao-placar" class="material-icons">assignment</i></a>
-		    	 <a class="btn-floating btn-large waves-effect waves-light blue"><i id="botao-texto" class="material-icons">shuffle</i></a>
+		    	 <a id="botao-reiniciar" class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">restore</i></a>
+		    	 <a id="botao-placar" class="btn-floating btn-large waves-effect waves-light green"><i class="material-icons">assignment</i></a>
+		    	 <a id="botao-texto" class="btn-floating btn-large waves-effect waves-light blue"><i class="material-icons">shuffle</i></a>
+		    	 <a id="botao-frase-id" class="btn-floating btn-large waves-effect waves-light cyan"><i class="material-icons">repeat_one</i></a>
+		    	 <input type="number" name="" id="frase-id" min="0">
+		    	 <div class="select-usuarios">
+		    	 	<select id="usuarios">
+		    	 		<option value="Eu">Eu</option>
+		    	 		<option value="Zé Mané">Zé Mané</option>
+		    	 		<option value="Garnache">Garnache</option>
+		    	 		<option value="Jacuzinho">Jacuzinho</option>
+		    	 	</select>
+		    	 	
+		    	 </div>
+		    	 <a id="botao-sync" class="btn-floating btn-large waves-effect waves-light yellow"><i class="material-icons">swap_vert</i></a>
 		    </div>
 		    
 		    <ul class="center">
@@ -55,6 +73,7 @@
 		<script type="text/javascript" src="js/main.js"></script>
 		<script type="text/javascript" src="js/placar.js"></script>
 		<script type="text/javascript" src="js/texto.js"></script>
+		<script type="text/javascript" src="js/selectize.js"></script>
 
     </body>
 </html>

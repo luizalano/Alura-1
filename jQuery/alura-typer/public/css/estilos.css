@@ -45,10 +45,44 @@
 	padding: 10px;
 }
 
-.placar{
+/*.placar{
 	display: none;
-}
+}*/
 
 body{
 	overflow: scroll;
 }
+
+#erro{
+	color: red;
+	font-weight: bold;
+	font-size: 20px;
+	display: none;
+}
+
+#spinner{
+	display: none;
+}
+
+#frase-id{
+	width: 50px;		
+}
+
+#botao-sync{
+	float: right;
+}
+
+.select-usuarios{
+	padding: 10px;
+	display: inline-block;
+}
+
+#usuarios{
+	display: block;	
+}
+
+#usuarios-selectized{
+	width: 150px;
+	vertical-align: middle;
+}
+
