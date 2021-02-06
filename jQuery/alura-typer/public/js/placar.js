@@ -37,11 +37,11 @@ function inserePlacar(){
 		resultado = "SBAGLIATO";
 	}
 
-	var usuario = "Eu"
+	var usuario = $("#usuarios").val();
 	var contadorCaracteres = $("#contador-caracteres").text();
 	var contadorPalavras = $("#contador-palavras").text();
 
-	var linha = novaLinha("Eu", contadorPalavras, resultado);
+	var linha = novaLinha(usuario, contadorPalavras, resultado);
 	linha.find(".botao-remover").click(atribuiEventoBotaoRemover);
 
 	tabela.prepend(linha);
