@@ -15,7 +15,7 @@ public class TestaGerente {
 		wesley.setNome("Wesley de Alcantara");
 		wesley.setSalario(4000);
 
-		Funcionario joao = new Funcionario();
+		EditorVideo joao = new EditorVideo();
 		joao.setNome("João das Couves");
 		joao.setCpf("14");
 		joao.setSalario(2000);
