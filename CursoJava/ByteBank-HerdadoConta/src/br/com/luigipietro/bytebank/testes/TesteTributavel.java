@@ -1,3 +1,6 @@
+package br.com.luigipietro.bytebank.testes;
+import br.com.luigipietro.bytebank.modelo.ContaCorrente;
+import br.com.luigipietro.bytebank.modelo.SeguroDeVida;
 
 public class TesteTributavel {
 

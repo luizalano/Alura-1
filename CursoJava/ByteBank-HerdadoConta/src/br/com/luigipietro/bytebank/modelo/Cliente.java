@@ -1,3 +1,13 @@
+package br.com.luigipietro.bytebank.modelo;
+
+/**
+ * 
+ * @author 	Luiz Alberto alano
+ * @version	0.0.1
+ * 
+ *
+ */
+
 public class Cliente {
 
     private String nome;
