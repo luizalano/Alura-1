@@ -8,6 +8,10 @@ public class TesteContas {
 		// TODO Auto-generated method stub
 		ContaCorrente cc = new ContaCorrente(11, 111111);
 		
+		String nome = "Alano";
+		nome = "Luiz";
+		System.out.println(nome);
+		
 		try {
 			cc.saca(4000);
 		} catch (Exception e) {

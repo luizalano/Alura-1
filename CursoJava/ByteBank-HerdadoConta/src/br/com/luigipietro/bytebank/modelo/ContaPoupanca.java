@@ -7,4 +7,11 @@ public class ContaPoupanca extends Conta {
 		
 	}
 
+	@Override
+	public String toString() {
+		
+		return "Conta poupança " + super.toString();
+	}
+
+
 }
