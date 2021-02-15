@@ -4,7 +4,7 @@ import br.com.luigipietro.bytebank.modelo.ContaCorrente;
 import br.com.luigipietro.bytebank.modelo.ContaPoupanca;
 import br.com.luigipietro.bytebank.modelo.SaldoInsuficienteException;
 
-public class Teste {
+public class TesteObjects {
 
 	public static void main(String[] args) {
 		System.out.println();

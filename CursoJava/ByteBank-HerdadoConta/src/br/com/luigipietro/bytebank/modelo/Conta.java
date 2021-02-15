@@ -78,5 +78,13 @@ public abstract class Conta {
 		return " agência:" + this.getAgencia() + ",  conta:" + this.getNumero() + ", com saldo de:" + this.getSaldo();
 	}
 
+	@Override
+	public boolean equals (Object o) {
+		Conta c = (Conta) o;
+				
+		if (this.getAgencia() == c.getAgencia() && 
+			this.getNumero() == c.getNumero()) return true;
+		else return false;
+	}
 
 }
