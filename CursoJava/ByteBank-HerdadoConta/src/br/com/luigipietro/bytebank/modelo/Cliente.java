@@ -1,5 +1,7 @@
 package br.com.luigipietro.bytebank.modelo;
 
+import java.io.Serializable;
+
 /**
  * 
  * @author 	Luiz Alberto alano
@@ -8,7 +10,12 @@ package br.com.luigipietro.bytebank.modelo;
  *
  */
 
-public class Cliente {
+public class Cliente implements Serializable {
+
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
     private String nome;
     private String cpf;

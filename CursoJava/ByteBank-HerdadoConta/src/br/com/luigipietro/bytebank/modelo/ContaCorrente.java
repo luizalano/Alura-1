@@ -1,5 +1,7 @@
 package br.com.luigipietro.bytebank.modelo;
 
+import java.io.Serializable;
+
 /***
  * Classe conta Corrente, herdade de Conta
  * @author Luiz Alberto Alano

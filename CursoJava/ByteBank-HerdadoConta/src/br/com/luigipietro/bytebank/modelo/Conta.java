@@ -1,6 +1,11 @@
 package br.com.luigipietro.bytebank.modelo;
 
-public abstract class Conta {
+import java.io.Serializable;
+
+/*
+ * Implementando a interface Comparable, a classe fica comparável, tendo um comparador "natural"
+ */
+public abstract class Conta implements Comparable<Conta>, Serializable{
 
     private double saldo;
     private int agencia;
@@ -75,7 +80,7 @@ public abstract class Conta {
 	@Override
 	public String toString() {
 		
-		return " agência:" + this.getAgencia() + ",  conta:" + this.getNumero() + ", com saldo de:" + this.getSaldo();
+		return this.getTitular().getNome() +  " agência:" + this.getAgencia() + ",  conta:" + this.getNumero() + ", com saldo de:" + this.getSaldo();
 	}
 
 	@Override
@@ -85,6 +90,12 @@ public abstract class Conta {
 		if (this.getAgencia() == c.getAgencia() && 
 			this.getNumero() == c.getNumero()) return true;
 		else return false;
+	}
+	
+	@Override
+	public int compareTo(Conta contaComparada) {
+		// Implementa tornando natural a comparação dos saldos
+		return Double.compare(this.saldo, contaComparada.saldo);
 	}
 
 }
