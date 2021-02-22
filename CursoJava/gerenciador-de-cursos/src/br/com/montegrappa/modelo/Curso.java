@@ -59,6 +59,10 @@ public class Curso {
 		return tt;
 	}
 	
+	public int getNumAlunos() {
+		return alunos.size();
+	}
+	
 	@Override
 	public String toString() {
 		String retorno = "Curso " + this.getNome() + " com " + this.getTempoTotal() + " horas de duração.\n";
